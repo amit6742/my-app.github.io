@@ -25,6 +25,7 @@ const Event = () => {
 
   const paste = (e) => {
     console.log(e.target.value);
+    
   };
 
   const key = (e)=>{
