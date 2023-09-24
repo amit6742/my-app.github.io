@@ -2,7 +2,6 @@ import { useContext} from "react";
 import "./videos.css";
 import ThemeContext from "./contex/themscontex";
 import useVideoDispatch from "./Hooks/customdispatch";
-
 const Video = ({
   title,
   channel = "coder dost",

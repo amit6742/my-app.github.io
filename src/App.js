@@ -1,21 +1,20 @@
 import "./App.css";
-import videoDB from "./components/data/data";
-
 import { useReducer, useState } from "react";
 import AddVideo from "./components/Addvideos";
 import VideoList from "./components/VideosList";
 import ThemeContext from "./components/contex/themscontex";
-
 import VideosContext from "./components/contex/videocontex";
 import VideoDispatch from "./components/contex/videoDispatch";
+
 function App() {
   const [editableVideo, setEditableVideo] = useState(null);
   const [mode, setMode] = useState("darkMode");
-
   const VideoReducer = (videos, action) => {
     switch (action.type) {
       case "ADD":
         return [...videos, { ...action.payload, id: videos.length + 1 }];
+      case "LOAD":
+        return action.payload;
       case "DELETE":
         return videos.filter((video) => video.id !== action.payload);
       case "UPDATE":
@@ -29,8 +28,7 @@ function App() {
         return videos;
     }
   };
-
-  const [videos, dispatch] = useReducer(VideoReducer, videoDB);
+  const [videos, dispatch] = useReducer(VideoReducer, []);
 
   const editVideo = (id) => {
     setEditableVideo(videos.find((video) => video.id === id));
@@ -38,6 +36,8 @@ function App() {
 
   return (
     <>
+      <div className="App">
+
       <ThemeContext.Provider value={mode}>
         <VideosContext.Provider value={videos}>
           <VideoDispatch.Provider value={dispatch}>
@@ -48,7 +48,6 @@ function App() {
             >
               {mode}
             </button>
-
             <div className={`App ${mode}`}>
               <AddVideo editableVideo={editableVideo}></AddVideo>
               <VideoList editVideo={editVideo}></VideoList>
@@ -56,6 +55,7 @@ function App() {
           </VideoDispatch.Provider>
         </VideosContext.Provider>
       </ThemeContext.Provider>
+      </div>
     </>
   );
 }

@@ -1,8 +1,6 @@
 import {  useEffect, useRef, useState } from "react";
 import "./Addvideos.css";
 import useVideoDispatch from "./Hooks/customdispatch";
-
-
 const initialState = {
   time: "12 year ago",
   channel: "coder Dost",
@@ -28,9 +26,8 @@ const AddVideo = ({ editableVideo }) => {
 
   const handleChange = (e) => {
     e.stopPropagation();
-    console.log(e.target.name, e.target.value);
     setVideo({ ...video, [e.target.name]: e.target.value });
-    console.log(video);
+   
   };
 
   useEffect(() => {

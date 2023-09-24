@@ -1,12 +1,12 @@
 
 
-const Timer =()=>{
-    return(<>
+const Timer = ()=>{
 
+
+    return(<>
     
 
     </>)
 }
-
 
 export default Timer;

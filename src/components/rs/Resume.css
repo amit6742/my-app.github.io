@@ -6,15 +6,14 @@ body {
 }
 
 
-
-  body  .light-Mode{
+   body .light-theme{
     color: rgb(0, 0, 0);
   background-color: rgb(204, 206, 208);
    
 
-}
-body .dark-mode{
-  background-color: #000428;
+}  
+  body .dark-theme{
+  background-color: #070922;
   color: rgb(168, 222, 251);
   
 

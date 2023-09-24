@@ -1,8 +1,31 @@
 import Video from "./video";
+import axios from "axios";
+
 import PlayButton from "./PlayButton";
 import useVideos from "./Hooks/custom";
+import { useEffect, useState } from "react";
+import useVideoDispatch from "./Hooks/customdispatch";
 const VideoList = ({ editVideo }) => {
-  const videos = useVideos();
+  const dispatch = useVideoDispatch()
+  const url = "https://jsonplaceholder.typicode.com/users"
+   const videos = useVideos();
+
+ async function handleClick (){
+    const res =  await axios.get(url);
+    console.log(res.data)
+    dispatch({ type:'LOAD',payload:res.data})
+
+  }
+  useEffect(()=>{
+    async function getVideos (){
+      const res =  await axios.get(url);
+      console.log(res.data)
+      dispatch({ type:'LOAD',payload:res.data})
+  
+    }
+   getVideos()
+
+  },[dispatch])
   return (
     <>
       {videos.map((video) => (
@@ -26,6 +49,7 @@ const VideoList = ({ editVideo }) => {
           </Video>
         </>
       ))}
+      <button onClick={handleClick}>get videos</button>
     </>
   );
 };

@@ -1,7 +1,5 @@
 
 
-
-
 const Resume = ({ experienceList, skillList }) => {
   return (
     <div>

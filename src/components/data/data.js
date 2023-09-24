@@ -23,6 +23,14 @@ const videos = [
     channel: "coder Dost",
     verified: true,
   },
+  {
+    id: 3,
+    title: "python tutorial",
+    views: "8k",
+    time: "6 year ago",
+    channel: "coder Dost",
+    verified: true,
+  },
 ];
 
 export default videos;

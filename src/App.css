@@ -8,4 +8,9 @@
 }
 .LightMode {
   background-color: #ccc;
+} 
+
+
+.active{
+  color:rgb(255, 64, 0);
 }

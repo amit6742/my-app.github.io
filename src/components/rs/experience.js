@@ -1,10 +1,16 @@
-// src/components/Experience.js
 
-import React from "react";
+
+
+
 
 const Experience = ({ experience }) => {
+
+
   return (
+    <>
+   
     <div>
+  
       <h2>Experience</h2>
       <ul>
         {experience.map((exp, index) => (
@@ -14,6 +20,7 @@ const Experience = ({ experience }) => {
         ))}
       </ul>
     </div>
+    </>
   );
 };
 

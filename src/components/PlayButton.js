@@ -14,10 +14,7 @@ const [playing, setPlaying ]  = useState(false) ;
         console.log(e)
         if(playing)onPlay()
         else onPause()
-
         setPlaying(!playing)
-      
-
     }
     return (<>
 

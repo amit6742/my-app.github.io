@@ -1,10 +1,15 @@
-// src/components/Skills.js
 
 import React from "react";
 
+
 const Skills = ({ skills }) => {
+ 
   return (
+    <>
+  
+
     <div>
+    
       <h2>Skills</h2>
       <ul>
         {skills.map((skill, index) => (
@@ -13,7 +18,7 @@ const Skills = ({ skills }) => {
         ))}
       </ul>
     </div>
+    </>
   );
 };
-
 export default Skills;
